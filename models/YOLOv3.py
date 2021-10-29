@@ -315,7 +315,7 @@ class Darknet(nn.Module):
 
 def load_model(model_path, weights_path=None):
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
-    model = Darknet(model_path).to("cpu")
+    model = Darknet(model_path).to(device)
 
     # model.apply(weights_init_normal)
 
